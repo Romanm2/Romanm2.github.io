@@ -5,19 +5,38 @@ import {
     Heading,
     Container,
     Text,
-    Button,
     Stack,
     Icon,
     useColorModeValue,
     createIcon
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react'
 
-import { Link, ExternalLinkIcon } from '@chakra-ui/layout'
+import  NavBar  from './NavBar';
 
-export default function MainPage() {
+
+function getMotd() {
+    const mottos = [
+        "Defeating a sandwich only makes it tastier",
+        "An apple a day just tastes good",
+        "When all hell breaks loose, make sure you have your umbrella",
+        "Sometimes the saddest days define our best days"
+    ]
+
+    return mottos[Math.floor(Math.random() * mottos.length)];
+}
+
+const MainPage = () => {
     return (
         <>
-            <Container maxW={'3x1'}>
+            <Container
+                maxW="container.md" // Set max width for Container
+                centerContent // Centers content horizontally
+                display="flex" // Enables flex to align items
+                justifyContent="center" // Centers content horizontally
+                alignItems="center" // Centers content vertically
+                minHeight="50vh" // Sets full viewport height
+                > 
+                <NavBar />
                 <Stack
                 as={Box}
                 textAlign={'center'}
@@ -29,11 +48,11 @@ export default function MainPage() {
                     lineHeight={'110%'}>
                     Roman Mendoza <br />
                     <Text as={'span'} color={'green.400'}>
-                        Software Engineer/DevOps Guru
+                        DevOps Specialist/Full Stack Engineer/Whatever you want just pay me.
                     </Text>
                 </Heading>
                 <Text color={'gray.500'}>
-                    I have a deep passion for solving real world problems with novel solutions using any technology at my disposal.
+                    {getMotd()}
                 </Text>
                 <Stack
                     direction={'column'}
@@ -41,21 +60,6 @@ export default function MainPage() {
                     align={'center'}
                     alignSelf={'center'}
                     position={'relative'}>
-                    <Button
-                    colorScheme={'green'}
-                    bg={'green.400'}
-                    rounded={'full'}
-                    px={6}
-                    _hover={{
-                        bg: 'green.500',
-                    }}>
-                    <Link href="www.linkedin.com/in/roman-mendoza-6065741a3" isExternal>
-                    LinkedIn <ExternalLinkIcon mx='2px' />
-                    </Link>
-                    </Button>
-                    <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-                    Learn more
-                    </Button>
                     <Box>
                     <Icon
                         as={Arrow}
@@ -72,7 +76,7 @@ export default function MainPage() {
                         right={'-125px'}
                         top={'-15px'}
                         transform={'rotate(10deg)'}>
-                        Thats me!
+                        est. 7/6/24
                     </Text>
                     </Box>
                 </Stack>
@@ -93,3 +97,5 @@ const Arrow = createIcon({
       />
     ),
   })
+
+export default MainPage;
