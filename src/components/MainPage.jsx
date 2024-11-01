@@ -8,7 +8,7 @@ import {
     Stack,
     Icon,
     useColorModeValue,
-    createIcon
+    createIcon,
 } from '@chakra-ui/react'
 
 import  NavBar  from './NavBar';
@@ -28,29 +28,30 @@ function getMotd() {
 const MainPage = () => {
     return (
         <>
+            <NavBar />
             <Container
                 maxW="container.md" // Set max width for Container
                 centerContent // Centers content horizontally
                 display="flex" // Enables flex to align items
                 justifyContent="center" // Centers content horizontally
                 alignItems="center" // Centers content vertically
-                minHeight="50vh" // Sets full viewport height
-                > 
-                <NavBar />
+                height="100vh"
+                >
+                <Heading
+                fontWeight={600}
+                fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+                lineHeight={'110%'}>
+                    Roman Mendoza <br />
+                    <Text as={'span'} color={'green.400'}>
+                        DevOps/Full Stack Engineer
+                    </Text>
+                </Heading>
                 <Stack
                 as={Box}
                 textAlign={'center'}
                 spacing={{ base: 8, md: 14 }}
                 py={{ base: 20, md: 36 }}>
-                <Heading
-                    fontWeight={600}
-                    fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-                    lineHeight={'110%'}>
-                    Roman Mendoza <br />
-                    <Text as={'span'} color={'green.400'}>
-                        DevOps Specialist/Full Stack Engineer/Whatever you want just pay me.
-                    </Text>
-                </Heading>
+                
                 <Text color={'gray.500'}>
                     {getMotd()}
                 </Text>

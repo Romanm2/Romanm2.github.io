@@ -12,8 +12,7 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar() {
     return (<>
-        <Container width={'100vw'} centerContent>
-            <Flex h={16} alignItems={'center'} justifyItems={'space-between'}>
+            <Flex h={16} alignItems={'center'} justifyItems={'space-between'} justify="center" position="static" pos="relative" boxSize="full">
                 <Breadcrumb separator='-' >
                     <BreadcrumbItem isCurrentPage>
                         <Link to="/">
@@ -34,6 +33,5 @@ export default function NavBar() {
                     </BreadcrumbItem>
                 </Breadcrumb>
             </Flex>
-        </ Container>
     </>);
 }

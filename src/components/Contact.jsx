@@ -15,10 +15,10 @@ const Contact = () => {
                 display="flex" // Enables flex to align items
                 justifyContent="center" // Centers content horizontally
                 alignItems="center" // Centers content vertically
-                minHeight="50vh" // Sets full viewport height
+                height="100vh"
                 > 
-            <Text>
-                You can contact me through email
+            <Text fontSize={20} color={'green.400'}>
+                You can contact me through email here: roman.m.mendoza1997@gmail.com
             </Text>
         </Container>
     </>

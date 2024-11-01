@@ -17,7 +17,7 @@ const About = () => {
                 display="flex" // Enables flex to align items
                 justifyContent="center" // Centers content horizontally
                 alignItems="center" // Centers content vertically
-                minHeight="50vh" // Sets full viewport height
+                height="100vh"
                 >  
             <Heading
                 fontWeight={600}
